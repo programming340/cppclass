@@ -1,11 +1,12 @@
 #include "hw01.h"
+#include <cmath>
 
 // Pre-conditions: none
 // Post-conditions: none
 // Returns: always returns true
 bool return_true()
 {
-    return false;
+    return true;
 }
 
 // Pre-conditions: none
@@ -13,7 +14,7 @@ bool return_true()
 // Returns: always returns false
 bool return_false()
 {
-    return true;
+    return false;
 }
 
 // Pre-conditions: none
@@ -21,7 +22,7 @@ bool return_false()
 // Returns: always returns value: 42
 int return_42()
 {
-    return 0;
+    return 42;
 }
 
 // Pre-conditions: none
@@ -29,7 +30,7 @@ int return_42()
 // Returns: always returns value: -42
 int return_neg_42()
 {
-    return 0;
+    return -42;
 }
 
 // Pre-conditions: none
@@ -37,7 +38,7 @@ int return_neg_42()
 // Returns: always returns value: 1.5
 double return_1p5()
 {
-    return 0.0;
+    return 1.5;
 }
 
 // Pre-conditions: none
@@ -47,5 +48,5 @@ double return_1p5()
 //        <math.h> or <cmath> header file. You can access it via the M_PI
 double return_pi()
 {
-    return 0.0;
+    return M_PI;
 }
