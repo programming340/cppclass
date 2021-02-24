@@ -1,11 +1,12 @@
 #include "hw02.h"
+#include <cmath>
 
 // Pre-conditions: none
 // Post-conditions: none
 // Returns: the opposite of what is passed in
 bool negate_bool(bool in)
 {
-    return in;
+    return not in;
 }
 
 // Pre-conditions: none
@@ -13,7 +14,7 @@ bool negate_bool(bool in)
 // Returns: the sum of a and b
 int int_sum(int a, int b)
 {
-    return 0;
+    return a+b;
 }
 
 // Pre-conditions: none
@@ -21,7 +22,7 @@ int int_sum(int a, int b)
 // Returns: converts the number of minutes given into seconds
 int min2secs(int minutes)
 {
-    return 0;
+    return minutes * 60;
 }
 
 // Pre-conditions: side > 0
@@ -29,7 +30,7 @@ int min2secs(int minutes)
 // Returns: the square units given a side of the square
 double area_of_square(double side)
 {
-    return 0.0;
+    return side*side;
 }
 
 // Pre-conditions: base > 0, height > 0
@@ -37,7 +38,7 @@ double area_of_square(double side)
 // Returns: area of traingle, as calculated by 1/2 * base * height
 double area_of_triangle(double base, double height)
 {
-    return 0.0;
+    return height * base / 2;
 }
 
 // Pre-conditions: width > 0, height > 0
@@ -45,7 +46,7 @@ double area_of_triangle(double base, double height)
 // Returns: the perimeter of a rectangle
 double perimiter_of_rectangle(double width, double height)
 {
-    return 0.0;
+    return 2 * (width + height);
 }
 
 // Pre-conditions: radius > 0
@@ -53,7 +54,7 @@ double perimiter_of_rectangle(double width, double height)
 // Returns: the area of a circle (note that area of circle is PI * r*r (e.g. r**2))
 double area_of_circle(double radius)
 {
-    return 0.0;
+    return M_PI * radius*radius;
 }
 
 // Pre-conditions: a > 0, q > 0
@@ -61,7 +62,7 @@ double area_of_circle(double radius)
 // Returns: the number of whole times that a is divisible by q
 int div_floor(int a, int q)
 {
-    return 0;
+   return a/q;
 }
 
 // Pre-conditions: a > 0, q > 0
@@ -69,15 +70,15 @@ int div_floor(int a, int q)
 // Returns: the remainder when a is divided by q
 int div_remainder(int a, int q)
 {
-    return 0;
+    return a%q;
 }
 
 // Pre-conditions: none
 // Post-conditions: none
 // Returns: farenheit converted to celsius: c = (f - 32) * (5/9)
 double farenheit_to_celsius(int f)
-{
-    return 0.0;
+{    
+    return (f- 32) / 1.8;
 }
 
 // Pre-conditions: none
@@ -85,5 +86,5 @@ double farenheit_to_celsius(int f)
 // Returns: celsius converted to farenheit: f = (c * (9/5)) + 32
 double celsius_to_fahrenheit(int c)
 {
-    return 0.0;
+    return c * 1.8 + 32;
 }
