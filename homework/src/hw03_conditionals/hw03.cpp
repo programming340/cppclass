@@ -9,7 +9,11 @@
 //          100 -> 100
 double cppclass_abs(double in)
 {
-    return 0.0;
+    if (in < 0.0)
+    {
+        in *= -1;
+    }
+    return in;
 }
 
 // Pre-conditions: none
@@ -17,15 +21,24 @@ double cppclass_abs(double in)
 // Returns: returns whichever of the inputs is larger
 int max_of_two_items(int a, int b)
 {
-    return 0;
+    if (a > b)
+    {
+        return a;
+    }
+        return b;
 }
+
 
 // Pre-conditions: none
 // Post-conditions: none
 // Returns: returns whichever of the inputs is smaller
 int min_of_two_items(int a, int b)
-{
-    return 0;
+{   
+    if (a < b)
+    {
+        return a;
+    }
+        return b;
 }
 
 // Pre-conditions: none
@@ -33,7 +46,15 @@ int min_of_two_items(int a, int b)
 // Returns: returns whichever of the inputs is largest
 int max_of_three_items(int a, int b, int c)
 {
-    return 0;
+    if (a > b and a > c)
+    {
+        return a;
+    }
+    if (a < b and b > c)
+    {
+        return b;
+    }
+        return c;
 }
 
 // Pre-conditions: none
@@ -45,6 +66,15 @@ int max_of_three_items(int a, int b, int c)
 //              c) unless it is divisible by 400
 bool is_leap_year(unsigned int year)
 {
+    if (year % 4 == 0)
+    {
+        if (year % 100 == 0 and year % 400 != 0)
+        {
+            return false;
+        }
+        return true;
+    }
+
     return false;
 }
 
@@ -54,5 +84,21 @@ bool is_leap_year(unsigned int year)
 // Returns: returns the value of: a op b
 int simple_calc(int a, int b, char op)
 {
-    return 0;
-}
+    if (op == '+')
+    {
+        return a + b;
+    }
+    if (op == '-')
+    {
+        return a - b;
+    }
+    if (op == '*')
+    {
+        return a * b;
+    }
+    if (op == '/')
+    {
+        return a / b;
+    }
+        return a % b;
+} 
