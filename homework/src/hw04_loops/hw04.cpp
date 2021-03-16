@@ -12,7 +12,12 @@
 //               x=4, y=3 -> 64/ Returns: returns the pow of x**y (aka x^y, x raised to the y)
 unsigned int int_pow(unsigned int x, unsigned int y)
 {
-    return 0;
+    int product = 1; 
+    for (int i = 0; i < y; i++)
+    {
+        product *= x; 
+    }
+    return product;
 }
 
 // Pre-conditions: none
@@ -26,7 +31,16 @@ unsigned int int_pow(unsigned int x, unsigned int y)
 //              0+1+2+3+4+5+6+7+8+9+10 -> 55
 unsigned int range_sum(unsigned int n)
 {
-    return 0;
+    int j = 0;
+    int sum = 0;
+    for (int i = 0; i < n; i++)
+    {
+        sum += j;
+        j++;
+    }
+
+
+    return sum;
 }
 
 // Pre-conditions: none
@@ -41,9 +55,25 @@ unsigned int range_sum(unsigned int n)
 //              0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...
 unsigned int fibonacci(unsigned int n)
 {
-    return 0;
-}
+    unsigned int no_1 = 1;
+    unsigned int no_2 = 0;
+    unsigned int sum = 0;
+    if (n == 0)
+    {
+        return 0;
+    }
 
+    for (unsigned int i = 0; i < n; i++)
+    {
+        sum = no_1 + no_2;
+        //std::cout << "Sum: " << sum << std::endl;
+        no_1 = no_2;
+        //std::cout << "Number 1: " << no_1 << std::endl;
+        no_2 = sum;
+        //std::cout << "Number 2: " << no_2 << std::endl;
+    }
+    return sum;
+}
 // Pre-conditions: input will be >= 0.0
 // Post-conditions: none
 // Returns: returns the cubic root of input calculated via bisection
@@ -63,5 +93,36 @@ unsigned int fibonacci(unsigned int n)
 //          
 double bisect_cubicroot(double input)
 {
-    return 0.0;
+    const double ACCURACY = 0.001;
+    double min = 0.0;
+    double max = input;
+
+    if (input < 1.0 and input > 0)
+    {
+        max = 1;
+    }
+    double mid = (min + max) / 2;
+    double guess_result = mid * mid * mid;
+
+    for (int i = 1; fabs(guess_result - input) > ACCURACY; mid = (min+max)/2, guess_result = mid*mid*mid,i++)
+    {
+
+        //if (i <= 10)
+        //std::cout << guess_result << std::endl;
+        if (guess_result > input)
+        {
+            max = mid;
+            //if (i <= 10)
+            //std::cout << min <<"-"<<max<<std::endl;
+        }
+
+        if (guess_result < input)
+        {
+            min = mid;
+            //if (i <= 10)
+            //std::cout << min <<"-"<<max<<std::endl;
+        }
+    }
+    return mid;
+
 }

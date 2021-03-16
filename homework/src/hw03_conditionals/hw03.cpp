@@ -25,7 +25,7 @@ int max_of_two_items(int a, int b)
     {
         return a;
     }
-        return b;
+    return b;
 }
 
 
@@ -38,7 +38,7 @@ int min_of_two_items(int a, int b)
     {
         return a;
     }
-        return b;
+    return b;
 }
 
 // Pre-conditions: none
@@ -54,7 +54,7 @@ int max_of_three_items(int a, int b, int c)
     {
         return b;
     }
-        return c;
+    return c;
 }
 
 // Pre-conditions: none
@@ -100,5 +100,5 @@ int simple_calc(int a, int b, char op)
     {
         return a / b;
     }
-        return a % b;
+    return a % b;
 } 
